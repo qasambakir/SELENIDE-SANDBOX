@@ -19,14 +19,14 @@ public class TestSelenidePartTwoTests {
         }
 
     @Test
-    void GitSolutionsEnterprise() {
+    void GitSolutionsEnterpriseTest () {
 
             // открываем страницу
         open("https://github.com");
             // Навести мышку на элемент Solutions
         $("header").$(byText("Solutions")).hover();
             // Проверить, что подменю "Enterprise" появилось и нажать на него
-        $(byText("Enterprise")).shouldBe(visible).click();
+        $("header").$(byText("Enterprise")).shouldBe(visible).click();
             // Убедиться, что на загруженной странице присутствует заголовок с нужным текстом
         $("#hero-section-brand-heading").shouldHave(text("The AI-powered developer platform"));
 

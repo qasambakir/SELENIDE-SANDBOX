@@ -17,9 +17,13 @@ public class DragAndDropTest {
         Configuration.baseUrl = "https://the-internet.herokuapp.com";
     }
     @Test
-    void dragAndDropUsingActions() {
+    void dragAndDropUsingActionsTest () {
         // Открываем страницу с Drag & Drop
         open("/drag_and_drop");
+
+        // Проверить, что в начале теста блок A содержит текст "A", а блок B — "B"
+        $("#column-a").shouldHave(text("A"));
+        $("#column-b").shouldHave(text("B"));
 
         // Перетаскиваем прямоугольник A на место B с использованием Selenide.actions()
         actions().dragAndDrop($(id("column-a")), $(id("column-b"))).perform();
@@ -30,9 +34,13 @@ public class DragAndDropTest {
     }
 
     @Test
-    void dragAndDropUsingSelenideMethod() {
+    void dragAndDropUsingSelenideMethodTest () {
         // Открываем страницу с Drag & Drop
         open("/drag_and_drop");
+
+        // Проверить, что в начале теста блок A содержит текст "A", а блок B — "B"
+        $("#column-a").shouldHave(text("A"));
+        $("#column-b").shouldHave(text("B"));
 
         // Используем встроенную команду dragAndDrop
         actions().dragAndDrop($("#column-a"),
