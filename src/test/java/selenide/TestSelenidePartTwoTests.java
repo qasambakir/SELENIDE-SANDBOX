@@ -19,7 +19,7 @@ public class TestSelenidePartTwoTests {
         }
 
     @Test
-    void GitSolutionsEnterpriseTest () {
+    void gitSolutionsEnterpriseTest () {
 
             // открываем страницу
         open("https://github.com");
